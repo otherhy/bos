@@ -11,5 +11,12 @@
 
     <artifactId>bos-dao</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.otherhy.bos</groupId>
+            <artifactId>bos-domain</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
 
 </project>

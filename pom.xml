@@ -402,7 +402,7 @@
                     <artifactId>tomcat7-maven-plugin</artifactId>
                     <version>2.1</version>
                     <configuration>
-                        <port>80</port>
+                        <port>9090</port>
                         <!-- 浏览器访问应用名称  -->
                         <path>/</path>
                     </configuration>
