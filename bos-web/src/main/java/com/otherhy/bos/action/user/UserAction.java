@@ -17,9 +17,15 @@ import org.springframework.stereotype.Controller;
 @Namespace("/")
 @ParentPackage("packageManager")
 public class UserAction extends BaseAction<User> {
-    @Action(value = "checkCode",results = {@Result(name = "checkCode",type = "fastjson")})
+    @Action(value = "userAction_checkCode",results = {@Result(name = "checkCode",type = "json")})
     public String checkCode() {
-
+        String checkCode = getParameter("checkCode");
+        String  sessionCode = (String) getSession().getAttribute("key");
+        if (sessionCode.equalsIgnoreCase(checkCode)) {
+            push(true);
+        } else {
+            push(false);
+        }
         return "checkCode";
     }
 }

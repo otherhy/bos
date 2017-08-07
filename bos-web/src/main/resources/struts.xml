@@ -10,11 +10,21 @@
     <constant name="struts.custom.i18n.resources" value="messages"/>
     <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
 
-    <package name="packageManager">
+    <package name="packageManager" extends="json-default">
         <result-types>
             <result-type name="fastjson" class="com.otherhy.bos.fastjson.FastjsonResult"></result-type>
         </result-types>
-        
+
+        <global-results>
+            <result name="findForPage" type="fastjson">
+                <param name="root">Map</param>
+            </result>
+        </global-results>
+
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+
         <action name="page_*_*">
             <result type="dispatcher">/WEB-INF/pages/{1}/{2}.jsp</result>
         </action>

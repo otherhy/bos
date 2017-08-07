@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="bos-web:war exploded">
-    <output-path>$PROJECT_DIR$/bos-web/target/bos-web</output-path>
+    <output-path>$PROJECT_DIR$/bos-web/target/bos-web-1.0-SNAPSHOT</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -75,10 +75,7 @@
           <element id="library" level="project" name="Maven: commons-io:commons-io:2.2" />
           <element id="library" level="project" name="Maven: org.apache.struts:struts2-spring-plugin:2.3.16.1" />
           <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.1" />
-          <element id="library" level="project" name="Maven: org.apache.struts:struts2-convention-plugin:2.5.8" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.1" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm-commons:5.1" />
-          <element id="library" level="project" name="Maven: org.ow2.asm:asm-tree:5.1" />
+          <element id="library" level="project" name="Maven: org.apache.struts:struts2-convention-plugin:2.3.16.1" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi:3.9" />
           <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.5" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:3.9" />
@@ -105,11 +102,10 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.0.5" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.0.5" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.0.5" />
-          <element id="library" level="project" name="Maven: javaee:javaee-api:5" />
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/bos-web/target/bos-web/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/bos-web/target/bos-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="bos-web/web/Web" />
     </root>

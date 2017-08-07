@@ -49,16 +49,17 @@
 
         $(function () {
             $("input[name='checkcode']").blur(function () {
-                if (this.val()!=null&&this.val()!=""){
-                    $.post(function ("${pageContext.request.contextPath}/userAction_checkCode",{chekcode:this.val()},function(data){}) {
+                var checkcode = this.value;
+                if (checkcode !=null && checkcode != ""){
+                    $.post("${pageContext.request.contextPath}/userAction_checkCode",{"checkCode":checkcode},function (data) {
                         if (data){
-                            $("checkCodespan").html("<img src='${pageContext.request.contextPath}/images/true-min.png'></img>")
+                            $("#checkCodespan").html("<img src='${pageContext.request.contextPath}/images/true-min.png'></img>")
                         } else {
-                            $("checkCodespan").html("<img src='${pageContext.request.contextPath}/images/false-min.png'></img>")
+                            $("#checkCodespan").html("<img src='${pageContext.request.contextPath}/images/false-min.png'></img>")
                         }
                     });
                 } else {
-                    $("checkCodespan").html("");
+                    $("#checkCodespan").html("");
                 }
             });
         })

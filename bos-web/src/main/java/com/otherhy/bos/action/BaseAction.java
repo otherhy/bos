@@ -84,15 +84,24 @@ public class BaseAction<T> extends ActionSupport implements ModelDriven<T> {
     }
 
     //操作值栈
-    public void setToStack(String key, Object value) {
+    public void set(String key, Object value) {
         ActionContext.getContext().getValueStack().set(key, value);
     }
 
-    public void pushToStack(Object value) {
+    public void push(Object value) {
         ActionContext.getContext().getValueStack().push(value);
     }
 
-    public void putToMap(String key, Object value) {
+    public void put(String key, Object value) {
         ActionContext.getContext().put(key, value);
+    }
+
+    //取值封装
+    public String getParameter(String key) {
+        return getRequest().getParameter(key);
+    }
+
+    public String[] getParameterValues(String key) {
+        return getRequest().getParameterValues(key);
     }
 }

@@ -44,17 +44,17 @@ public class FastjsonResult implements Result {
 
     @Override
     public void execute(ActionInvocation invocation) throws Exception {
-        //获取返回对象，设置返回参数
+        //获取返回对象
         HttpServletResponse response = (HttpServletResponse) invocation.getInvocationContext().get(StrutsStatics.HTTP_RESPONSE);
         response.setContentType("text/json;charset=utf-8");
 
-        //获取需要序列化的对象
+        //获取要序列化的对象
         Object rootObject = findRootObject(invocation);
 
         //获取序列化对象
         SimplePropertyPreFilter filter = new SimplePropertyPreFilter();
 
-        //设置序列化条件
+        //设置序列化参数
         if (includeProperties != null && includeProperties.size() != 0) {
             for (String property : includeProperties) {
                 filter.getIncludes().add(property);
@@ -69,18 +69,20 @@ public class FastjsonResult implements Result {
         //执行序列化
         String jsonString = JSON.toJSONString(rootObject, filter, SerializerFeature.DisableCircularReferenceDetect);
 
-        //写出
+        //写出json数据
         response.getWriter().write(jsonString);
     }
 
     private Object findRootObject(ActionInvocation invocation) {
         ValueStack stack = invocation.getStack();
         Object rootObject;
-        if (root != null) {
-            rootObject = stack.findValue(root);
+
+        if (this.root != null) {
+            rootObject = stack.findValue(this.root);
         } else {
             rootObject = stack.peek();
         }
+
         return rootObject;
     }
 }
